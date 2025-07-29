@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:partial="clr-namespace:Ex1.ViewsPartial"
+             Title="Login"
+             x:Class="Ex1.Views.LoginView">
+    <Border Style="{StaticResource  Grid.Page}">
+        <ScrollView>
+            <Grid
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                ColumnDefinitions="Auto,*"
+                Style="{StaticResource Grid.Page}">
+                <partial:HeaderView
+                    Grid.Row="0" Grid.ColumnSpan="2"
+                    ViewTitle="Login"
+                    ViewDescription="Use this screen to login to this applciation" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Login ID" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Password" />
+                <Entry Grid.Row="2" Grid.Column="1" IsPassword="True" />
+                <HorizontalStackLayout
+                    Grid.Row="3" Grid.ColumnSpan="2">
+                    <Button Text="Login" />
+                    <Button Text="Cancel" />
+
+                </HorizontalStackLayout>
+            </Grid>
+        </ScrollView>
+    </Border>
+</ContentPage>
