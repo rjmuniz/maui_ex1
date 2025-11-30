@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ResourceDictionary 
-        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        x:Class="Common.Library.MAUI.Resources.Styles.CommonStyles">
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Common.Library.MAUI.Resources.Styles.CommonStyles">
     <!-- *************** -->
     <!-- Other Resources -->
     <!-- *************** -->
@@ -13,8 +14,7 @@
     <!-- ****************** -->
     <!-- ** My Keyed Styles -->
     <!-- ****************** -->
-    <Style TargetType="Grid"
-           x:Key="Grid.Page">
+    <Style TargetType="Grid" x:Key="Grid.Page">
         <Setter Property="ColumnSpacing"
                 Value="{StaticResource DefaultSpacingForGrid}" />
         <Setter Property="RowSpacing"
@@ -24,31 +24,31 @@
         <Setter Property="Padding"
                 Value="{StaticResource DefaultSpacingForGrid}" />
     </Style>
-    <Style TargetType="Element"
-           x:Key="ShellStyles">
+    <Style TargetType="Element" x:Key="ShellStyles">
         <Setter Property="Shell.BackgroundColor"
                 Value="Blue" />
         <Setter Property="Shell.TitleColor"
                 Value="White" />
     </Style>
     <Style TargetType="Border" x:Key="Border.Page">
-            <Setter Property="Stroke" Value="Gray" />
-            <Setter Property="StrokeThickness" Value="1" />
-            <Setter Property="Margin" Value="10" />
-            <Setter Property="HorizontalOptions" Value="Fill" />
-            <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="Stroke" Value="Gray" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
     </Style>
 
     <!-- ************* -->
     <!-- Global Styles -->
     <!-- ************* -->
     <Style TargetType="Label">
-        <Setter Property="VerticalOptions"
-                Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
     </Style>
     <Style TargetType="HorizontalStackLayout">
-        <Setter Property="Spacing"
-                Value="5" />
+        <Setter Property="Spacing" Value="5" />
     </Style>
-    
+
+    <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor" Value="Blue" />
+    </Style>
 </ResourceDictionary>

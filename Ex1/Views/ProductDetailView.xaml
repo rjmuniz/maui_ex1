@@ -7,7 +7,7 @@
              x:Class="Ex1.Views.ProductDetailView">
     <Border Style="{StaticResource Grid.Page}">
         <ScrollView>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                   ColumnDefinitions="Auto,*"
                   Style="{StaticResource Grid.Page}">
 
@@ -23,13 +23,37 @@
                 <Label Text="Color" Grid.Row="3" />
                 <Entry Grid.Row="3" Grid.Column="1" />
                 <Label Text="Cost" Grid.Row="4" />
-                <Entry Grid.Row="4" Grid.Column="1" />
+                <HorizontalStackLayout Grid.Row="4" Grid.Column="1">
+                    <Entry Text="{Binding Value}" 
+                           BindingContext="{x:Reference CostStepper}" />
+                    <Stepper x:Name="CostStepper"
+                             Value="5"
+                             Minimum="1"
+                             Maximum="{Binding Value}"
+                             BindingContext="{x:Reference PriceStepper}"
+                             Increment="1" />
+                </HorizontalStackLayout>
                 <Label Text="Price" Grid.Row="5" />
-                <Entry Grid.Row="5" Grid.Column="1" />
+                <HorizontalStackLayout Grid.Row="5" Grid.Column="1">
+                    <Entry Text="{Binding Value}" 
+                           BindingContext="{x:Reference PriceStepper}" />
+                    <Stepper x:Name="PriceStepper"
+                             Value="10"
+                             Minimum="{Binding Value}"
+                             Maximum="9999"
+                             BindingContext="{x:Reference CostStepper}"
+                             Increment="1" />
+                </HorizontalStackLayout>
                 <Label Text="Size" Grid.Row="6" />
                 <Entry Grid.Row="6" Grid.Column="1" />
                 <Label Text="Weight" Grid.Row="7" />
-                <Entry Grid.Row="7" Grid.Column="1" />
+                <VerticalStackLayout Grid.Row="7" Grid.Column="1">
+                    <Slider x:Name="weight" Value="1" Minimum="1" 
+                            Maximum="100" ValueChanged="Weight_Changed" />
+                    <Label BindingContext="{x:Reference weight}" 
+                           Text="{Binding Value}" />
+                </VerticalStackLayout>
+                
                 <Label Text="Category" Grid.Row="8" />
                 <Entry Grid.Row="8" Grid.Column="1" />
                 <Label Text="Model" Grid.Row="9" />
@@ -40,7 +64,17 @@
                 <Entry Grid.Row="11" Grid.Column="1" />
                 <Label Text="Discontinued Date" Grid.Row="12" />
                 <Entry Grid.Row="12" Grid.Column="1" />
-                <HorizontalStackLayout Grid.Row="13" Grid.Column="1">
+                
+                <Label Text="Product Picture" Grid.Row="13" />
+                <Image Grid.Row="13" Grid.Column="1" HorizontalOptions="Start" 
+                       Aspect="Center" Source="repair.webp" />
+                
+                <Label Text="Product Notes" Grid.Row="14" />
+                <Editor Grid.Row="14" Grid.Column="1" HeightRequest="100" 
+                        IsSpellCheckEnabled="True"
+                        IsTextPredictionEnabled="True"/>
+                
+                <HorizontalStackLayout Grid.Row="15" Grid.Column="1">
                     <Button Text="Save" />
                     <Button Text="Cancel" />
                 </HorizontalStackLayout>

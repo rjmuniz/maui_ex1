@@ -12,4 +12,9 @@ public partial class ProductDetailView : ContentPage
     {
         InitializeComponent();
     }
+
+    private void Weight_Changed(object? sender, ValueChangedEventArgs e)
+    {
+        this.weight.Value = Math.Round(e.NewValue, 0);
+    }
 }
